@@ -79,7 +79,7 @@ void Bank :: choice()
 
 void Bank :: personData()
 {
-    cout<<"Enter the data of person "<<total+1<<endl;
+    cout<<"\nEnter the data of person "<<total+1<<endl;
     cout<<"Enter name: ";
     cin>>person[total].name;
     cout<<"Enter ID: ";
@@ -97,7 +97,7 @@ void Bank :: showData()
 {
     for (int i=0;i<total;i++)
     {
-        cout<<"Data of person "<<i+1<<endl;
+        cout<<"\nData of person "<<i+1<<endl;
         cout<<"ID: "<<person[i].ID<<endl;
         cout<<"Name: "<<person[i].name<<endl;
         cout<<"Address: "<<person[i].address<<endl;
@@ -114,22 +114,22 @@ void Bank :: updateData()
     {
         if (id==person[i].ID)
         {
-          cout<<"Current Data: "<<endl;
+          cout<<"Current Data of person "<<i+1<<endl;
           cout<<"ID: "<<person[i].ID<<endl;
           cout<<"Name: "<<person[i].name<<endl;
           cout<<"Address: "<<person[i].address<<endl;
           cout<<"Contact: "<<person[i].contact<<endl;
           cout<<"Total Cash: "<<person[i].cash<<endl;
           cout<<"\n\nEnter new record:"<<endl;
-          cout<<"Enter name: "<<endl;
+          cout<<"Enter name: ";
           cin>>person[i].name;
-          cout<<"Enter ID: "<<endl;
+          cout<<"Enter ID: ";
           cin>>person[i].ID;
           cout<<"Enter address: ";
           cin>>person[i].address;
-          cout<<"Enter contact: "<<endl;
+          cout<<"Enter contact: ";
           cin>>person[i].contact;
-          cout<<"Enter total cash: "<<endl;
+          cout<<"Enter total cash: ";
           cin>>person[i].cash;
           break;
         }
@@ -187,27 +187,27 @@ void Bank :: transactions()
           switch(ch)
           {
               case '1':
-                  cout<<"Enter the amount to deposit: "<<endl;
+                  {cout<<"Enter the amount to deposit: "<<endl;
                   cin>>amount;
                   person[i].cash=person[i].cash+amount;
                   cout<<"Your new amount is: "<<person[i].cash<<endl;
-                  break;
+                  break;}
               case '2':
-                  back:
-                  cout<<"Enter the amount to deposit: "<<endl;
+                  {back:
+                  cout<<"Enter the amount to withdraw: "<<endl;
                   cin>>amount;
                   if (amount>person[i].cash)
                   {
                       cout<<"Your current amount is just: "<<person[i].cash<<endl;
                       Sleep(3000);
-                      goto back;
+                       goto back;
                   }
                   person[i].cash=person[i].cash-amount;
                   cout<<"Your new amount is: "<<person[i].cash<<endl;
-                  break;
+                  break;}
               default:
-                  cout<<"Invalid Input."<<endl;
-                  break;
+                  {cout<<"Invalid Input."<<endl;
+                  break;}
           }
           break;
 
